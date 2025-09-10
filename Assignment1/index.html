@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HW1 — HTML & CSS Exercise</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+  </header>
+
+  <main class="content" role="main">
+    <section class="hero container" aria-labelledby="no13-title">
+      <div class="no13-card">
+        <p class="kicker">Location Favourites</p>
+        <h1 id="no13-title" class="no13-title"><span class="no">No.</span> <span class="num">13</span></h1>
+      </div>
+
+      <figure class="hero-figure">
+        <img src="sayhello.png" alt="Decorative 'Say hello' wordmark" class="hero-image" />
+        <figcaption class="hero-caption">Ensure the image maintains its aspect ratio in all browsers.</figcaption>
+      </figure>
+
+      <p class="intro">
+        We'd love to hear from you, so give us a call. Or, if you're the shy and retiring type, drop us a line and we'll get back to you.
+      </p>
+
+      <p class="cta-row">
+        <a class="btn btn-outline" href="X.html#GetInTouch" role="button" aria-label="Go to the Get in Touch section on X.html">Get in Touch</a>
+      </p>
+    </section>
+
+    <section class="panel panel-split" aria-label="Articles and Newsletter">
+      <div class="container split">
+        <div class="col left">
+          <p class="panel-kicker">Read our latest articles</p>
+          <p><a class="text-link" href="X.html#LatestArticle">Read our Latest Article</a></p>
+        </div>
+        <div class="col right">
+          <form class="newsletter" onsubmit="return false" aria-label="Sign up to our newsletter">
+            <label class="panel-kicker" for="email">Sign up to our newsletter</label>
+            <div class="signup-row">
+              <input id="email" type="email" placeholder="Enter your email address" aria-label="Email address" />
+              <a class="btn btn-outline" href="X.html#SignUp">Sign Up</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel-addresses" aria-label="Addresses and contact">
+      <div class="container addresses">
+        <article class="address">
+          <h2 class="smallcap gold">Headquarters</h2>
+          <h3 class="city">Edinburgh</h3>
+          <address>
+            1012 Constitution Street<br />
+            Edinburgh<br />
+            Scotland<br />
+            EH6 7AE<br />
+            <br />
+            T: +44 (0) 555 561 0120<br />
+            E: <a href="mailto:hello@productions.com">hello@productions.com</a>
+          </address>
+          <p><a class="btn btn-solid" href="X.html#ContactUs">Contact Us</a></p>
+        </article>
+
+        <article class="address">
+          <h2 class="smallcap gold">Offices</h2>
+          <h3 class="city">New York</h3>
+          <address>
+            12 E. 47th Street<br />
+            5th Floor<br />
+            New York, New York 10017<br />
+            USA<br />
+            <br />
+            T: +1 212-555-8843<br />
+            E: <a href="mailto:newyork@productions.com">newyork@productions.com</a>
+          </address>
+        </article>
+
+        <article class="address">
+          <h2 class="smallcap gold">&nbsp;</h2>
+          <h3 class="city">London</h3>
+          <address>
+            128 Dean Street<br />
+            London<br />
+            England<br />
+            W1D 4QF<br />
+            <br />
+            T: +44 (0) 20 5555 1190<br />
+            E: <a href="mailto:london@productions.com">london@productions.com</a>
+          </address>
+        </article>
+
+        <article class="address">
+          <h2 class="smallcap gold">&nbsp;</h2>
+          <h3 class="city">Manchester</h3>
+          <address>
+            37 Oldfield Road<br />
+            Manchester<br />
+            England<br />
+            M5 4LJ<br />
+            <br />
+            T: +44 (0) 161 467 1212<br />
+            E: <a href="mailto:manchester@productions.com">manchester@productions.com</a>
+          </address>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Say Hello Studio • <a class="text-link" href="X.html#ContactUs">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
