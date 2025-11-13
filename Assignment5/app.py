@@ -162,7 +162,7 @@ def delete_company(name: str):
     companies.remove(company)
     save_data(data)
 
-    return jsonify({"message": f"Company '{name}' deleted"}), HTTPStatus.OK
+    return jsonify({"message": f"Company '{name}' deleted"}), HTTPStatus.NO_CONTENT
 
 
 @app.errorhandler(404)
