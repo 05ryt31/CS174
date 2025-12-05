@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Stock Search</h1>
+        </header>
+        
+        <!-- Search Form -->
+        <div class="search-section">
+            <form id="search-form">
+                <div class="form-group">
+                    <label for="ticker-input">Enter stock ticker symbol to search:</label>
+                    <input 
+                        type="text" 
+                        id="ticker-input" 
+                        name="ticker" 
+                        placeholder="e.g., AAPL, GOOGL, MSFT"
+                        required
+                    >
+                    <div class="button-group">
+                        <button type="submit" id="search-btn">Search</button>
+                        <button type="button" id="clear-btn">Clear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Cache Status Message -->
+        <div id="cache-message" class="cache-message" style="display: none;"></div>
+
+        <!-- Results Section with Tabs -->
+        <div class="results-section" id="results-section" style="display: none;">
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab(event, 'company-tab')">Company Outlook</button>
+                <button class="tab-button" onclick="openTab(event, 'stock-tab')">Stock Summary</button>
+                <button class="tab-button" onclick="openTab(event, 'history-tab')">Search History</button>
+            </div>
+
+            <!-- Company Outlook Tab -->
+            <div id="company-tab" class="tab-content active">
+                <h2>Company Outlook</h2>
+                <table class="data-table" id="company-table">
+                    <tbody>
+                        <!-- Company data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Stock Summary Tab -->
+            <div id="stock-tab" class="tab-content">
+                <h2>Stock Summary</h2>
+                <table class="data-table" id="stock-table">
+                    <tbody>
+                        <!-- Stock data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Search History Tab -->
+            <div id="history-tab" class="tab-content">
+                <h2>Search History</h2>
+                <table class="data-table" id="history-table">
+                    <thead>
+                        <tr>
+                            <th>Ticker</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- History data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-message" class="error-message" style="display: none;"></div>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
