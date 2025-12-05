@@ -49,9 +49,9 @@ async function loadTruckingCompanies() {
 
 // Open popup with HTML content from server
 function openPopupWithHTML(htmlContent) {
-  const win = window.open('', '_blank', 'width=900,height=650,scrollbars=yes,noopener');
+  const popupRef = window.open('', '_blank', 'width=900,height=650,scrollbars=yes');
   
-  if (!win) {
+  if (!popupRef) {
     // Fallback if popup is blocked
     const fallback = document.getElementById('popupFallback') || document.createElement('div');
     fallback.id = 'popupFallback';
@@ -65,5 +65,10 @@ function openPopupWithHTML(htmlContent) {
   win.document.open();
   win.document.write(htmlContent);
   win.document.close();
+  try {
+    win.opener = null;
+  } catch (e) {
+    /* ignore if browser blocks assignment */
+  }
 }
 
